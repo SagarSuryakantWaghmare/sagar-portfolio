@@ -7,7 +7,6 @@ import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Achievements from './components/sections/Achievements';
 import Education from './components/sections/Education';
-import Internships from './components/sections/Internships';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 
