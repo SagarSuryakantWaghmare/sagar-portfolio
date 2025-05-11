@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { ArrowDown, Download } from 'lucide-react';
 import Typed from 'typed.js';
-
+import profile from '../Assets/profile.png'
 const Hero = () => {
   const typedRef = useRef<HTMLSpanElement>(null);
   const typed = useRef<Typed | null>(null);
@@ -109,7 +109,13 @@ const Hero = () => {
                 stiffness: 100
               }}
             >
-              <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/8978799/pexels-photo-8978799.jpeg')] bg-cover bg-center mix-blend-overlay" />
+              <img 
+                src={profile} 
+                alt="Profile" 
+                className="absolute z-10 inset-0 w-full h-full object-cover rounded-full bg-cover bg-center "
+                // style={{ filter: 'grayscale(100%) brightness(0.8)' }}
+              />
+              {/* <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/8978799/pexels-photo-8978799.jpeg')] bg-cover bg-center mix-blend-overlay" /> */}
             </motion.div>
           </div>
         </div>

@@ -16,7 +16,7 @@ const Footer = () => {
           
           <div className="flex space-x-4">
             <motion.a 
-              href="https://github.com" 
+              href="https://github.com/SagarSuryakantWaghmare" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
@@ -27,7 +27,7 @@ const Footer = () => {
               <Github size={24} />
             </motion.a>
             <motion.a 
-              href="https://linkedin.com" 
+              href="https://linkedin.com/in/sagarwaghmare44" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
@@ -38,7 +38,7 @@ const Footer = () => {
               <Linkedin size={24} />
             </motion.a>
             <motion.a 
-              href="mailto:contact@example.com" 
+              href="sagarwaghmare1384@gmail.com" 
               className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
               whileHover={{ scale: 1.1, y: -5 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
