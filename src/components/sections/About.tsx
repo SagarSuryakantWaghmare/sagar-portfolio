@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../ui/SectionTitle';
 import { Code, Laptop, PenTool, Terminal } from 'lucide-react';
-
+import Work from '../Assets/Work.png';
 interface FeatureCardProps {
   icon: React.ComponentType<{ size?: number }>;
   title: string;
@@ -69,13 +69,13 @@ const About = () => {
             <div className="relative">
               <div className="rounded-lg overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg"
+                  src={Work}
                   alt="Developer coding"
                   className="w-full rounded-lg"
                 />
               </div>
               <motion.div
-                className="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 px-4 py-2 rounded-lg shadow-lg"
+                className="absolute -bottom-6  bg-white dark:bg-dark-800 px-4 py-2 rounded-lg shadow-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
