@@ -12,7 +12,8 @@
   }
   
   body {
-    @apply font-inter text-dark-800 bg-white dark:bg-dark-900 dark:text-dark-100 transition-colors duration-300;
+    @apply font-inter text-dark-800 bg-white dark:bg-dark-900 dark:text-dark-100 transition-colors duration-300 overflow-x-hidden;
+    max-width: 100vw;
   }
 
   h1, h2, h3, h4, h5, h6 {

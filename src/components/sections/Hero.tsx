@@ -39,9 +39,11 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 order-2 lg:order-1">
             <motion.div
+              className="w-full"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              style={{ maxWidth: '100%', overflow: 'hidden' }}
             >
               <span className="text-primary-600 dark:text-primary-400 font-semibold mb-2 block">
                 Hello, I'm
@@ -57,10 +59,11 @@ const Hero = () => {
               </motion.h1>
 
               <motion.div
-                className="mb-6"
+                className="mb-6 w-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
+                style={{ maxWidth: '100%', overflow: 'hidden' }}
               >
                 <span className="text-xl md:text-2xl font-medium text-dark-600 dark:text-dark-300">
                   I'm a <span ref={typedRef}></span>
@@ -72,6 +75,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
+                style={{ maxWidth: '100%', overflow: 'hidden' }}
               >
                 I build scalable full-stack applications and design intuitive user experiences with 
                 a passion for modern, impactful development.
@@ -109,6 +113,7 @@ const Hero = () => {
                 type: "spring",
                 stiffness: 100
               }}
+              style={{ maxWidth: '100%', overflow: 'hidden' }}
             >
               <img 
                 src={profile} 

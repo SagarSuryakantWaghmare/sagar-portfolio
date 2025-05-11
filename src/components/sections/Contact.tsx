@@ -54,11 +54,12 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           <motion.div 
-            className="md:col-span-2"
+            className="md:col-span-2 w-full"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
+            style={{ maxWidth: '100%', overflow: 'hidden' }}
           >
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             
@@ -139,11 +140,12 @@ const Contact = () => {
           </motion.div>
           
           <motion.div 
-            className="md:col-span-3 card p-8"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="md:col-span-3 card p-8 w-full"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
+            style={{ maxWidth: '100%', overflow: 'hidden' }}
           >
             <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
             
