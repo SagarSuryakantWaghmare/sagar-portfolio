@@ -70,8 +70,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Email</h4>
-                  <a href="mailto:sagar@example.com" className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400">
-                    sagar@example.com
+                  <a href="mailto:sagarwaghmare1384@gmail.com" className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400">
+                    sagarwaghmare1384@gmail.com
                   </a>
                 </div>
               </div>
@@ -82,8 +82,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Phone</h4>
-                  <a href="tel:+919876543210" className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400">
-                    +91 98765 43210
+                  <a href="tel:+917219330989" className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400">
+                    +91 7219330989
                   </a>
                 </div>
               </div>
@@ -105,7 +105,7 @@ const Contact = () => {
               <h4 className="text-lg font-medium mb-4">Connect With Me</h4>
               <div className="flex gap-4">
                 <motion.a 
-                  href="https://github.com" 
+                  href="https://github.com/SagarSuryakantWaghmare" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-dark-800 dark:bg-dark-700 text-white p-3 rounded-full hover:bg-primary-600 dark:hover:bg-primary-600"
@@ -116,7 +116,7 @@ const Contact = () => {
                   <Github size={20} />
                 </motion.a>
                 <motion.a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/sagarwaghmare44/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-[#0077B5] text-white p-3 rounded-full hover:bg-[#006699]"
@@ -127,7 +127,7 @@ const Contact = () => {
                   <Linkedin size={20} />
                 </motion.a>
                 <motion.a 
-                  href="mailto:sagar@example.com" 
+                  href="mailto:sagarwaghmare1384@gmail.com" 
                   className="bg-primary-600 text-white p-3 rounded-full hover:bg-primary-700"
                   whileHover={{ y: -5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
