@@ -61,25 +61,31 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <motion.div
             className="lg:col-span-5"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="rounded-lg overflow-hidden">
+              <motion.div 
+                className="rounded-lg overflow-hidden"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 <img
                   src={Work}
                   alt="Developer coding"
                   className="w-full rounded-lg"
                 />
-              </div>
+              </motion.div>
               <motion.div
                 className="absolute -bottom-6  bg-white dark:bg-dark-800 px-4 py-2 rounded-lg shadow-lg"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
               >
                 <p className="font-semibold text-primary-600 dark:text-primary-400">
                   Computer Science Student
