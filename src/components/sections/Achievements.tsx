@@ -55,7 +55,7 @@ const Achievements = () => {
       icon: <Trophy size={40} />,
       title: '4th Rank in SIH',
       description:
-        'Achieved 4th place in the Smart India Hackathon Internal Round with the AlumniSynergy project.',
+        'Achieved 4th place in the Smart India Hackathon Internal Round with the AlumniSynergy project In the Internal Hackathon of the college.',
       countValue: 4,
       countSuffix: 'th',
     },

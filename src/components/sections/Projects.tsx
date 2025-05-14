@@ -33,13 +33,6 @@ const Projects = () => {
       projectUrl: "#",
       tags: ["React", "Node.js", "Express", "MongoDB"]
     },
-    {
-      title: "Construction Industry Website",
-      description: "Professional website for M/s. Khinvasara Associates, showcasing services in civil, industrial, and turnkey project construction.",
-      image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg",
-      projectUrl: "#",
-      tags: ["HTML", "CSS", "JavaScript", "Responsive Design"]
-    }
   ];
 
   const containerVariants = {
