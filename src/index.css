@@ -121,14 +121,13 @@
   }
 
   .skill-item {
-    @apply py-4 px-6 rounded-lg m-2 transition-all duration-300 hover:text-white transform hover:-translate-y-1 cursor-pointer;
+    @apply py-4 px-6 rounded-lg m-2 transition-all duration-300 hover:text-white transform hover:-translate-y-1 cursor-pointer inline-flex flex-col items-center justify-center;
     min-width: 120px;
-    animation: float 3s ease-in-out infinite;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .skill-item:hover {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
 
   @keyframes float {
@@ -141,8 +140,9 @@
   }
 
   .skills-track {
-    @apply flex gap-4;
+    @apply flex gap-4 inline-flex;
     animation: scroll 30s linear infinite;
+    will-change: transform;
   }
 
   .skills-track:hover {
@@ -150,7 +150,7 @@
   }
 
   .skills-container {
-    @apply overflow-hidden relative;
+    @apply overflow-hidden relative whitespace-nowrap;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }
 
@@ -159,7 +159,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(calc(-50% - 1rem));
+      transform: translateX(-50%);
     }
   }
 

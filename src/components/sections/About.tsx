@@ -11,18 +11,45 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => (
   <motion.div
-    className="card p-6"
+    className="card p-6 shine-effect"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.6 }}
-    whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+    whileHover={{ 
+      y: -10, 
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      borderColor: "rgba(var(--primary-500), 0.3)"
+    }}
   >
-    <div className="mb-4 text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-3 rounded-lg inline-block">
+    <motion.div 
+      className="mb-4 text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-3 rounded-lg inline-block"
+      whileHover={{ 
+        rotate: [0, -10, 10, -5, 5, 0], 
+        scale: 1.1,
+        transition: { duration: 0.5 }
+      }}
+    >
       <Icon size={24} />
-    </div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-dark-600 dark:text-dark-300">{description}</p>
+    </motion.div>
+    <motion.h3 
+      className="text-xl font-semibold mb-2"
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+    >
+      {title}
+    </motion.h3>
+    <motion.p 
+      className="text-dark-600 dark:text-dark-300"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: 0.3 }}
+    >
+      {description}
+    </motion.p>
   </motion.div>
 );
 
@@ -67,29 +94,89 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
+              {/* Decorative elements */}
               <motion.div 
-                className="rounded-lg overflow-hidden"
+                className="absolute -top-5 -left-5 w-20 h-20 border-2 border-primary-300 dark:border-primary-700 rounded-lg z-0"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+              />
+              
+              {/* Image wrapper with animations */}
+              <motion.div 
+                className="rounded-lg overflow-hidden z-10 relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
+                whileHover={{ 
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
+                }}
               >
-                <img
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-tr from-primary-500/20 to-transparent z-10"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                />
+                
+                <motion.img
                   src={Work}
                   alt="Developer coding"
-                  className="w-full rounded-lg"
+                  className="w-full rounded-lg relative z-0"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                />
+                
+                {/* Overlay decorative element */}
+                <motion.div 
+                  className="absolute -bottom-3 -right-3 w-16 h-16 bg-primary-400 dark:bg-primary-600 rounded-full z-[-1] opacity-20"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1, duration: 0.6 }}
                 />
               </motion.div>
+              
+              {/* Label badge */}
               <motion.div
-                className="absolute -bottom-6  bg-white dark:bg-dark-800 px-4 py-2 rounded-lg shadow-lg"
+                className="absolute -bottom-6 left-4 bg-white dark:bg-dark-800 px-5 py-3 rounded-lg shadow-lg z-20"
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.5 }}
+                whileHover={{ 
+                  y: -3, 
+                  boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.2)"
+                }}
               >
-                <p className="font-semibold text-primary-600 dark:text-primary-400">
+                <motion.p 
+                  className="font-semibold text-primary-600 dark:text-primary-400"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   Computer Science Student
-                </p>
+                </motion.p>
+              </motion.div>
+              
+              {/* Years experience badge */}
+              <motion.div
+                className="absolute -top-4 right-8 bg-primary-500 dark:bg-primary-600 text-white px-3 py-2 rounded-full shadow-lg z-20"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 200,
+                  delay: 0.8 
+                }}
+                whileHover={{ 
+                  rotate: [0, -5, 5, -5, 0],
+                  transition: { duration: 0.5 }
+                }}
+              >
+                <span className="text-sm font-semibold">3+ Years Coding</span>
               </motion.div>
             </div>
           </motion.div>

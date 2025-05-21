@@ -60,45 +60,90 @@ const Contact = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             style={{ maxWidth: '100%', overflow: 'hidden' }}
-          >
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg">
+          >            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+              <div className="space-y-6 mb-8">
+              <motion.div 
+                className="flex items-start gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    rotate: 5,
+                    backgroundColor: "var(--tw-colors-primary-200)"
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   <Mail size={20} />
-                </div>
+                </motion.div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Email</h4>
-                  <a href="mailto:sagarwaghmare1384@gmail.com" className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400">
+                  <motion.a 
+                    href="mailto:sagarwaghmare1384@gmail.com" 
+                    className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
                     sagarwaghmare1384@gmail.com
-                  </a>
+                  </motion.a>
                 </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg">
+              </motion.div>                <motion.div 
+                className="flex items-start gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    rotate: -5,
+                    backgroundColor: "var(--tw-colors-primary-200)"
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   <Phone size={20} />
-                </div>
+                </motion.div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Phone</h4>
                   <a href="tel:+917219330989" className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400">
-                    +91 7219330989
-                  </a>
+                    +91 7219330989                  </a>
                 </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg">
+              </motion.div>
+              <motion.div 
+                className="flex items-start gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    rotate: 5,
+                    backgroundColor: "var(--tw-colors-primary-200)"
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   <MapPin size={20} />
-                </div>
+                </motion.div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Location</h4>
-                  <p className="text-dark-600 dark:text-dark-300">
+                  <motion.p 
+                    className="text-dark-600 dark:text-dark-300"
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
                     Deogiri College of Engineering,<br />Maharashtra, India
-                  </p>
+                  </motion.p>
                 </div>
-              </div>
+              </motion.div>
             </div>
             
             <div>
@@ -148,102 +193,209 @@ const Contact = () => {
             style={{ maxWidth: '100%', overflow: 'hidden' }}
           >
             <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
-            
-            <form onSubmit={handleSubmit}>
+              <motion.form 
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0.9 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                >
                   <label htmlFor="name" className="block mb-2 font-medium">
                     Your Name
                   </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="John Doe"
-                    required
-                    className={inputClasses}
-                  />
-                </div>
-                <div>
+                  <motion.div className="relative">
+                    <motion.input
+                      whileFocus={{ scale: 1.01, boxShadow: "0 0 0 2px rgba(var(--primary-500), 0.3)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="John Doe"
+                      required
+                      className={inputClasses}
+                    />
+                    <motion.span 
+                      className="absolute bottom-0 left-0 h-0.5 bg-primary-500"
+                      initial={{ width: 0 }}
+                      whileFocus={{ width: "100%" }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.div>
+                </motion.div>                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                >
                   <label htmlFor="email" className="block mb-2 font-medium">
                     Your Email
                   </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="john@example.com"
-                    required
-                    className={inputClasses}
-                  />
-                </div>
+                  <motion.div className="relative">
+                    <motion.input
+                      whileFocus={{ scale: 1.01, boxShadow: "0 0 0 2px rgba(var(--primary-500), 0.3)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="john@example.com"
+                      required
+                      className={inputClasses}
+                    />
+                    <motion.span 
+                      className="absolute bottom-0 left-0 h-0.5 bg-primary-500"
+                      initial={{ width: 0 }}
+                      whileFocus={{ width: "100%" }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.div>
+                </motion.div>
               </div>
               
-              <div className="mb-4">
+              <motion.div 
+                className="mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
                 <label htmlFor="subject" className="block mb-2 font-medium">
                   Subject
                 </label>
-                <motion.input
-                  whileFocus={{ scale: 1.01 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Project Inquiry"
-                  required
-                  className={inputClasses}
-                />
-              </div>
+                <motion.div className="relative">
+                  <motion.input
+                    whileFocus={{ scale: 1.01, boxShadow: "0 0 0 2px rgba(var(--primary-500), 0.3)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Project Inquiry"
+                    required
+                    className={inputClasses}
+                  />
+                  <motion.span 
+                    className="absolute bottom-0 left-0 h-0.5 bg-primary-500"
+                    initial={{ width: 0 }}
+                    whileFocus={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+              </motion.div>
               
-              <div className="mb-6">
+              <motion.div 
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+              >
                 <label htmlFor="message" className="block mb-2 font-medium">
                   Message
                 </label>
-                <motion.textarea
-                  whileFocus={{ scale: 1.01 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  placeholder="Tell me about your project or inquiry..."
-                  required
-                  className={inputClasses}
-                />
-              </div>
+                <motion.div className="relative">
+                  <motion.textarea
+                    whileFocus={{ scale: 1.01, boxShadow: "0 0 0 2px rgba(var(--primary-500), 0.3)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    placeholder="Tell me about your project or inquiry..."
+                    required
+                    className={inputClasses}
+                  />                  <motion.span 
+                    className="absolute bottom-0 left-0 h-0.5 bg-primary-500"
+                    initial={{ width: 0 }}
+                    whileFocus={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+              </motion.div>
               
-              <div className="flex items-center">
+              <motion.div 
+                className="flex items-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+              >
                 <Button 
                   type="submit" 
                   className={`flex items-center gap-2 ${isSubmitting ? 'opacity-70' : ''}`}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'} 
-                  <Send size={16} />
+                  {isSubmitting ? (
+                    <motion.span
+                      className="flex items-center gap-2"
+                      animate={{ 
+                        opacity: [1, 0.5, 1],
+                      }}
+                      transition={{ 
+                        duration: 1.5, 
+                        repeat: Infinity,
+                        repeatType: "loop"
+                      }}
+                    >
+                      Sending...
+                      <motion.span
+                        animate={{
+                          rotate: 360
+                        }}
+                        transition={{ 
+                          duration: 1, 
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      >
+                        <Send size={16} />
+                      </motion.span>
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      className="flex items-center gap-2"
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      Send Message
+                      <Send size={16} />
+                    </motion.span>
+                  )}
                 </Button>
                 
                 {submitSuccess && (
-                  <motion.span 
-                    className="ml-4 text-green-600 dark:text-green-400"
+                  <motion.div 
+                    className="ml-4 text-green-600 dark:text-green-400 flex items-center gap-2"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring", stiffness: 200 }}
                   >
+                    <motion.span
+                      initial={{ scale: 0 }}
+                      animate={{ scale: [0, 1.2, 1] }}
+                      transition={{ duration: 0.5 }}
+                      className="flex items-center justify-center w-5 h-5 bg-green-600 dark:bg-green-500 rounded-full"
+                    >
+                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </motion.span>
                     Message sent successfully!
-                  </motion.span>
+                  </motion.div>
                 )}
-              </div>
-            </form>
+              </motion.div>
+            </motion.form>
           </motion.div>
         </div>
       </div>

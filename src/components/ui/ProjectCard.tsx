@@ -21,24 +21,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <motion.div 
       className="project-card group"
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-      whileHover={{ y: -10 }}
+      transition={{ 
+        duration: 0.7,
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }}
+      whileHover={{ 
+        y: -15,
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+      }}
     >
+      <div className="glow-border"></div>
       <motion.div 
         className="relative w-full h-48 overflow-hidden rounded-t-lg"
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.5 }}
       >
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70 z-10 
-            opacity-70 group-hover:opacity-90 transition-opacity duration-300"
+          className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70 z-10"
+          initial={{ opacity: 0.6 }}
+          whileHover={{ opacity: 0.9 }}
+          transition={{ duration: 0.3 }}
         />
         <motion.img 
           src={image} 
           alt={title}
+          whileHover={{ scale: 1.1, rotate: -1 }}
+          transition={{ duration: 0.8 }}
           className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
         />
         
