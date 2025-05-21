@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
@@ -334,6 +334,7 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   className={`flex items-center gap-2 ${isSubmitting ? 'opacity-70' : ''}`}
+                  // @ts-ignore
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

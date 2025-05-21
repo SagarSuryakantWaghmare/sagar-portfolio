@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 interface ButtonProps {
@@ -13,7 +12,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   children,
   variant = 'primary',
   className = '',

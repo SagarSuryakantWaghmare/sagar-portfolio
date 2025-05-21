@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { ArrowDown, Download } from 'lucide-react';
@@ -109,6 +109,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1 }}
               >
+                
                 <Button href="#projects">
                   View My Work
                 </Button>

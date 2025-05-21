@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
@@ -11,7 +11,7 @@ import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 import GlobalStyles from './components/ui/GlobalStyles';
 
-function App() {
+const App = () => {
   useEffect(() => {
     document.title = "Sagar Waghmare | Full Stack Developer";
   }, []);
@@ -33,6 +33,6 @@ function App() {
       </div>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

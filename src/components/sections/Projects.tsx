@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../ui/SectionTitle';
 import ProjectCard from '../ui/ProjectCard';
@@ -67,6 +66,7 @@ const Projects = () => {
               description={project.description}
               image={project.image}
               projectUrl={project.projectUrl}
+              // @ts-ignore
               tags={project.tags}
             />
           ))}

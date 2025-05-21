@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 interface SectionTitleProps {
@@ -7,7 +6,7 @@ interface SectionTitleProps {
   align?: 'left' | 'center' | 'right';
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ 
+const SectionTitle = ({ 
   title, 
   subtitle, 
   align = 'center' 

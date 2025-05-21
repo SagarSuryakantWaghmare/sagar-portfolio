@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
 import { ExternalLink, Github } from 'lucide-react';
@@ -11,7 +10,7 @@ interface ProjectCardProps {
   tags?: string[];
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard = ({
   title,
   description,
   image,

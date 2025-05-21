@@ -1,6 +1,4 @@
-import React from 'react';
-
-const GlobalStyles: React.FC = () => (
+const GlobalStyles = () => (
   <style jsx global>{`
     /* Base Animation Keyframes */
     @keyframes float {
