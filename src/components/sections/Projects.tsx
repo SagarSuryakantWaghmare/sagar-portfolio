@@ -4,35 +4,64 @@ import ProjectCard from '../ui/ProjectCard';
 
 const Projects = () => {
   const projects = [
-    {
-      title: "AlumniSynergy",
-      description: "A MERN + React Native project for an Alumni platform (SIH1653), where I served as Team Lead, ranking 4th in the college SIH.",
-      image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
-      projectUrl: "#",
-      tags: ["React", "Node.js", "MongoDB", "React Native"]
-    },
-    {
-      title: "BoostText",
-      description: "A text transformation web app with multiple functionalities to manipulate and enhance text content.",
-      image: "https://images.pexels.com/photos/4126724/pexels-photo-4126724.jpeg",
-      projectUrl: "#",
-      tags: ["JavaScript", "React", "CSS"]
-    },
-    {
-      title: "InstaNews",
-      description: "Instant bite-sized news delivery platform with the slogan 'Instant News, Lasting Impact.'",
-      image: "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg",
-      projectUrl: "#",
-      tags: ["React", "News API", "Responsive Design"]
-    },
-    {
-      title: "MaharashtraWonders",
-      description: "Tourism-based travelism website with advanced search and filter functionality for exploring Maharashtra.",
-      image: "https://images.pexels.com/photos/4275885/pexels-photo-4275885.jpeg",
-      projectUrl: "#",
-      tags: ["React", "Node.js", "Express", "MongoDB"]
-    },
-  ];
+  {
+    title: "portfolio 💼",
+    description: "A modern, responsive personal portfolio website of Sagar Suryakant Waghmare — Full Stack Developer | UI/UX Enthusiast | MERN Stack Developer — built using React, Tailwind CSS, and Framer Motion.",
+    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
+    projectUrl: "https://sagar-portfolio-dun.vercel.app",
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
+    label: "live"
+  },
+  {
+    title: "FreeFlow Chat",
+    description: "Sounds like a great name for a peer-to-peer (P2P) communication platform that ensures seamless interaction without obstacles and no data storage. 🚀",
+    image: "https://images.pexels.com/photos/4126724/pexels-photo-4126724.jpeg",
+    projectUrl: "https://freeflow-three.vercel.app/",
+    tags: ["React", "P2P"],
+    label: "live demo"
+  },
+  {
+    title: "LeetCode Info Tracker",
+    description: "A web application built with React and Vite to track LeetCode progress. It displays the number of questions solved in different difficulty levels: Easy, Medium, and Hard. Ideal for developers looking to visualize their coding journey and progress.",
+    image: "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg",
+    projectUrl: "https://leetcode-info-tracker.vercel.app",
+    tags: ["React", "Vite"],
+    label: "live demo"
+  },
+  {
+    title: "StartupSphere",
+    description: "StartupSphere is a dynamic platform designed to showcase innovative startups and their pitches to potential investors, partners, and enthusiasts. Whether you're a startup looking for exposure or an investor searching for the next big thing, StartupSphere connects innovators with opportunities.",
+    image: "https://images.pexels.com/photos/4275885/pexels-photo-4275885.jpeg",
+    projectUrl: "https://invowave.vercel.app",
+    tags: ["React", "Startups"],
+    label: "live demo"
+  },
+  {
+    title: "🔥 CrackWise – AI-Powered Interview Preparation Platform",
+    description: "CrackWise is an intelligent, AI-driven interview preparation platform designed to help job seekers confidently crack technical and HR interviews.",
+    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
+    projectUrl: "https://crackwise.vercel.app",
+    tags: ["AI", "Interview Prep"],
+    label: "live demo"
+  },
+  {
+    title: "textbooseter",
+    description: "This web application allows users to input text and receive essential information about the sentences they type. It provides functionalities such as converting text to uppercase or lowercase, copying text to the clipboard, clearing the input, and removing extra spaces.",
+    image: "https://images.pexels.com/photos/4126724/pexels-photo-4126724.jpeg",
+    projectUrl: "https://text-booster.vercel.app",
+    tags: ["JavaScript", "React"],
+    label: "live demo"
+  },
+  {
+    title: "Naruto Ninja Runner",
+    description: "Experience the thrill of ninja adventure as Naruto dashes through obstacles in this addictive, offline-ready game, reminiscent of the classic dino runner! it is a beginner developer game.",
+    image: "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg",
+    projectUrl: "https://action-game-of-naruto.vercel.app",
+    tags: ["Game", "JavaScript"],
+    label: "live demo"
+  },
+];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -61,13 +90,13 @@ const Projects = () => {
         >
           {projects.map((project, index) => (
             <ProjectCard
-              key={index}
-              title={project.title}
+              key={index}              title={project.title}
               description={project.description}
               image={project.image}
               projectUrl={project.projectUrl}
               // @ts-ignore
               tags={project.tags}
+              label={project.label}
             />
           ))}
         </motion.div>

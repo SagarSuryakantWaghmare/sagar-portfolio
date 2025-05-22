@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 
 interface ProjectCardProps {
   title: string;
@@ -8,6 +9,7 @@ interface ProjectCardProps {
   image: string;
   projectUrl: string;
   tags?: string[];
+  label?: string;
 }
 
 const ProjectCard = ({
@@ -16,10 +18,16 @@ const ProjectCard = ({
   image,
   projectUrl,
   tags = [],
+  label,
 }) => {
-  return (
+  const [expanded, setExpanded] = useState(false);
+  const MAX_CHARS = 120;
+  const shouldTruncate = description.length > MAX_CHARS;
+  const shortDescription = shouldTruncate ? 
+    description.substring(0, MAX_CHARS) + '...' : 
+    description;  return (
     <motion.div 
-      className="project-card group"
+      className="project-card group h-full flex flex-col"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -53,9 +61,8 @@ const ProjectCard = ({
           transition={{ duration: 0.8 }}
           className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
         />
-        
-        <motion.div 
-          className="absolute top-4 right-4 z-20 flex gap-2"
+          <motion.div 
+          className="absolute top-4 right-4 z-20 flex gap-2 flex-wrap justify-end"
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
         >
@@ -73,9 +80,8 @@ const ProjectCard = ({
           ))}
         </motion.div>
       </motion.div>
-      
-      <motion.div 
-        className="p-6 bg-white dark:bg-dark-800 relative z-20"
+        <motion.div 
+        className="p-6 bg-white dark:bg-dark-800 relative z-20 flex-grow flex flex-col"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -89,28 +95,39 @@ const ProjectCard = ({
           {title}
         </motion.h3>
         
-        <motion.p 
-          className="text-dark-600 dark:text-dark-300 mb-6"
+        <motion.div 
+          className="text-dark-600 dark:text-dark-300 mb-4 flex-grow"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          {description}
-        </motion.p>
-        
-        <motion.div 
-          className="flex gap-4"
+          <p>{expanded ? description : shortDescription}</p>
+          {shouldTruncate && (
+            <button 
+              className="text-primary-500 hover:text-primary-600 font-medium flex items-center gap-1 mt-2 transition-colors"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? (
+                <>Show less <ChevronUp size={16} /></>
+              ) : (
+                <>Read more <ChevronDown size={16} /></>
+              )}
+            </button>
+          )}
+        </motion.div>
+          <motion.div 
+          className="flex gap-4 mt-auto"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-        >
-          <Button 
-            href={`${projectUrl}/demo`}
+        >          <Button 
+            href={`${projectUrl}`}
+            target={"_blank"}
             variant="outline"
             className="flex-1 justify-center group/btn"
           >
             <motion.span className="flex items-center gap-2">
-              Live Demo
+              {label || "Live Demo"}
               <motion.span
                 initial={{ x: 0 }}
                 whileHover={{ x: 5 }}
