@@ -68,13 +68,12 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-              >
-                <motion.div 
+              >                <motion.div 
                   className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg"
                   whileHover={{ 
                     scale: 1.1, 
                     rotate: 5,
-                    backgroundColor: "var(--tw-colors-primary-200)"
+                    backgroundColor: "var(--color-primary-200)"
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
@@ -97,13 +96,12 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-              >
-                <motion.div 
+              >                <motion.div 
                   className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg"
                   whileHover={{ 
                     scale: 1.1, 
                     rotate: -5,
-                    backgroundColor: "var(--tw-colors-primary-200)"
+                    backgroundColor: "var(--color-primary-200)"
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
@@ -121,13 +119,12 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
-              >
-                <motion.div 
+              >                <motion.div 
                   className="text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-dark-700 p-2 rounded-lg"
                   whileHover={{ 
                     scale: 1.1, 
                     rotate: 5,
-                    backgroundColor: "var(--tw-colors-primary-200)"
+                    backgroundColor: "var(--color-primary-200)"
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
@@ -140,7 +137,7 @@ const Contact = () => {
                     whileHover={{ x: 3 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    Deogiri College of Engineering,<br />Maharashtra, India
+                    Santoshe Mata Nagar,N-2 CIDCO,<br />Chhatrapati Sambhajinagar<br />Maharashtra, India
                   </motion.p>
                 </div>
               </motion.div>
@@ -214,11 +211,10 @@ const Contact = () => {
                       whileFocus={{ scale: 1.01, boxShadow: "0 0 0 2px rgba(var(--primary-500), 0.3)" }}
                       transition={{ type: "spring", stiffness: 300, damping: 10 }}
                       type="text"
-                      id="name"
-                      name="name"
+                      id="name"                      name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="Rajat Ranvir"
                       required
                       className={inputClasses}
                     />
@@ -243,11 +239,10 @@ const Contact = () => {
                       whileFocus={{ scale: 1.01, boxShadow: "0 0 0 2px rgba(var(--primary-500), 0.3)" }}
                       transition={{ type: "spring", stiffness: 300, damping: 10 }}
                       type="email"
-                      id="email"
-                      name="email"
+                      id="email"                      name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="rajat.ranvir@example.com"
                       required
                       className={inputClasses}
                     />
@@ -279,8 +274,7 @@ const Contact = () => {
                     id="subject"
                     name="subject"
                     value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Project Inquiry"
+                    onChange={handleChange}                    placeholder="Website Development Opportunity"
                     required
                     className={inputClasses}
                   />
@@ -311,8 +305,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
-                    placeholder="Tell me about your project or inquiry..."
+                    rows={5}                    placeholder="Hi Sagar, I'm interested in discussing a potential collaboration on a web development project..."
                     required
                     className={inputClasses}
                   />                  <motion.span 
