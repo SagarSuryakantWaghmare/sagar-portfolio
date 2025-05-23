@@ -27,6 +27,7 @@ const ProjectCard = ({
     description.substring(0, MAX_CHARS) + '...' : 
     description;  return (
     <motion.div 
+    // @ts-ignore
       className="project-card group h-full flex flex-col"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
