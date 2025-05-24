@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 import { ArrowDown, Download } from 'lucide-react';
 import Typed from 'typed.js';
 import profile from '../../components/Assets/profile.png';
-import resume from '../../components/Assets/sagar_waghmare.pdf';
+import resume from '../../components/Assets/SagarWaghmare.pdf';
 const Hero = () => {
   const typedRef = useRef<HTMLSpanElement>(null);
   const typed = useRef<Typed | null>(null);
