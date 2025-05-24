@@ -113,13 +113,14 @@ const Hero = () => {
                 <Button href="#projects">
                   View My Work
                 </Button>
-                <Button 
-                  variant="outline" 
-                  href={resume} 
-                  download={true} 
-                  className="flex items-center gap-2"
+                <Button
+                  variant="outline"
+                  href={resume}
+                  download={true}
+                  className="flex flex-row items-center gap-2"
                 >
-                  Download Resume <Download size={16} />
+                  <span>Download Resume</span>
+                  <Download size={16} />
                 </Button>
               </motion.div>
             </motion.div>
