@@ -95,7 +95,7 @@ const About = () => {
             <div className="relative">
               {/* Decorative elements */}
               <motion.div 
-                className="absolute -top-5 -left-5 w-20 h-20 border-2 border-primary-300 dark:border-primary-700 rounded-lg z-0"
+                className="absolute -top-5  w-20 h-20 border-2 border-primary-300 dark:border-primary-700 rounded-lg z-0"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -130,7 +130,7 @@ const About = () => {
                 
                 {/* Overlay decorative element */}
                 <motion.div 
-                  className="absolute -bottom-3 -right-3 w-16 h-16 bg-primary-400 dark:bg-primary-600 rounded-full z-[-1] opacity-20"
+                  className="absolute -bottom-3  w-16 h-16 bg-primary-400 dark:bg-primary-600 rounded-full z-[-1] opacity-20"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -140,7 +140,7 @@ const About = () => {
               
               {/* Label badge */}
               <motion.div
-                className="absolute -bottom-6 left-4 bg-white dark:bg-dark-800 px-5 py-3 rounded-lg shadow-lg z-20"
+                className="absolute -bottom-6  bg-white dark:bg-dark-800 px-5 py-3 rounded-lg shadow-lg z-20"
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
