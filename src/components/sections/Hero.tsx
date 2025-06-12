@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
+import LazyImage from '../ui/LazyImage';
 import { ArrowDown, Download } from 'lucide-react';
 import Typed from 'typed.js';
 import profile from '../../components/Assets/profile.png';
@@ -159,14 +160,13 @@ const Hero = () => {
                 transition={{ delay: 1.2, duration: 0.5 }}
               />
               
-              {/* Profile image with glowing border */}
-              <motion.div
+              {/* Profile image with glowing border */}              <motion.div
                 className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden relative z-10 glow-effect"
                 animate={{ 
                   boxShadow: [
-                    "0 0 10px 2px rgba(var(--primary-500), 0.3)",
-                    "0 0 20px 6px rgba(var(--primary-500), 0.6)",
-                    "0 0 10px 2px rgba(var(--primary-500), 0.3)"
+                    "0 0 10px 2px rgba(255, 137, 17, 0.3)",
+                    "0 0 20px 6px rgba(255, 137, 17, 0.6)",
+                    "0 0 10px 2px rgba(255, 137, 17, 0.3)"
                   ]
                 }}
                 transition={{ 
@@ -176,10 +176,10 @@ const Hero = () => {
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full" />
-                <img 
+                <LazyImage 
                   src={profile} 
-                  alt="Profile" 
-                  className="absolute z-10 inset-0 w-full h-full object-cover rounded-full bg-cover bg-center"
+                  alt="Sagar Waghmare - Full Stack Developer" 
+                  className="absolute z-10 inset-0 w-full h-full object-cover rounded-full"
                 />
                 <motion.div 
                   className="absolute inset-0 bg-gradient-to-br from-primary-400/30 to-primary-600/30 z-20 mix-blend-overlay"

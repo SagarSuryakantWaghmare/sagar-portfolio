@@ -42,8 +42,6 @@ const Education = () => {
                 <ul className="list-disc list-inside text-dark-600 dark:text-dark-300 space-y-1">
                   <li>Maintained excellent academic standing throughout the program</li>
                   <li>Participated in multiple hackathons and coding competitions</li>
-                  <li>Led technical workshops for junior students</li>
-                  <li>College topper in competitive programming contests</li>
                 </ul>
               </div>
             </div>

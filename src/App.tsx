@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import SEOHead from './components/ui/SEOHead';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -15,9 +16,9 @@ const App = () => {
   useEffect(() => {
     document.title = "Sagar Waghmare | Full Stack Developer";
   }, []);
-
   return (
     <ThemeProvider>
+      <SEOHead />
       <GlobalStyles />
       <div className="flex flex-col min-h-screen">
         <Navbar />

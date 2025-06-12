@@ -175,7 +175,7 @@ const About = () => {
                   transition: { duration: 0.5 }
                 }}
               >
-                <span className="text-sm font-semibold">3+ Years Coding</span>
+                <span className="text-sm font-semibold">2+ Years Coding</span>
               </motion.div>
             </div>
           </motion.div>
@@ -196,7 +196,7 @@ const About = () => {
                 I solve LeetCode problems daily to sharpen my DSA skills and have consistently ranked among the top, being the College Topper 8 times on the Coding Ninjas Leaderboard.
               </p>
               <p>
-                I lead and contribute to impactful real-world projects—including Smart India Hackathon prototypes (4th place) and scalable web platforms built with the MERN stack. I'm a third-year Computer Science and Engineering student at Deogiri College of Engineering, striving for a good package as a fresher.
+                I lead and contribute to impactful real-world projects—including Smart India Hackathon prototypes (4th place) in the college level internal Hackathon and scalable web platforms built with the MERN stack. I'm a third-year Computer Science and Engineering student at Deogiri College of Engineering, striving for a good package as a fresher.
               </p>
             </div>
 

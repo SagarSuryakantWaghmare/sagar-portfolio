@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
+import LazyImage from './LazyImage';
 import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 
@@ -48,18 +49,15 @@ const ProjectCard = ({
         className="relative w-full h-48 overflow-hidden rounded-t-lg"
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.5 }}
-      >
-        <motion.div 
+      >        <motion.div 
           className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70 z-10"
           initial={{ opacity: 0.6 }}
           whileHover={{ opacity: 0.9 }}
           transition={{ duration: 0.3 }}
         />
-        <motion.img 
-          src={image} 
-          alt={title}
-          whileHover={{ scale: 1.1, rotate: -1 }}
-          transition={{ duration: 0.8 }}
+        <LazyImage 
+          src={image}
+          alt={`${title} project screenshot`}
           className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
         />
           <motion.div 

@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
+import { useOptimizedScroll, smoothScrollTo } from '../../hooks/useOptimizedScroll';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const navLinks = [
@@ -15,14 +16,17 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  // Optimized scroll handler
+  const handleScroll = useCallback((scrollY: number) => {
+    setScrolled(scrollY > 50);
   }, []);
+
+  useOptimizedScroll(handleScroll, 16);
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    smoothScrollTo(href);
+  };
 
   return (
     <motion.header
@@ -45,19 +49,17 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
             <span>Sagar</span>
-            </motion.a>
-
-          <nav className="hidden md:flex items-center space-x-6">
+            </motion.a>          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
-              <motion.a
+              <motion.button
                 key={link.name}
-                href={link.href}
-                className="navbar-link text-base"
+                onClick={() => handleNavClick(link.href)}
+                className="navbar-link text-base cursor-pointer bg-transparent border-none"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 {link.name}
-              </motion.a>
+              </motion.button>
             ))}
             <motion.button
               onClick={toggleTheme}
