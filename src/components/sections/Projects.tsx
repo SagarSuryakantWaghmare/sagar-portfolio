@@ -4,6 +4,9 @@ import ProjectCard from '../ui/ProjectCard';
 import portfolioImage from '../Assets/ProjectsImg/portfolio.png';
 import freeflowImage from '../Assets/ProjectsImg/freeflow.png';
 import leetcodeTrackerImage from '../Assets/ProjectsImg/leetcodeTracker.png';
+import startupSphereImage from '../Assets/ProjectsImg/invowave.png';
+import textBoosterImage from '../Assets/ProjectsImg/textbooster.png';
+import NarutoImage from '../Assets/ProjectsImg/naruto.png';
 const Projects = () => {
   const projects = [
   {
@@ -33,23 +36,15 @@ const Projects = () => {
   {
     title: "StartupSphere",
     description: "StartupSphere is a dynamic platform designed to showcase innovative startups and their pitches to potential investors, partners, and enthusiasts. Whether you're a startup looking for exposure or an investor searching for the next big thing, StartupSphere connects innovators with opportunities.",
-    image: "https://images.pexels.com/photos/4275885/pexels-photo-4275885.jpeg",
+    image:startupSphereImage,
     projectUrl: "https://invowave.vercel.app",
     tags: ["React", "Startups"],
     label: "live demo"
   },
   {
-    title: "🔥 CrackWise – AI-Powered Interview Preparation Platform",
-    description: "CrackWise is an intelligent, AI-driven interview preparation platform designed to help job seekers confidently crack technical and HR interviews.",
-    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
-    projectUrl: "https://crackwise.vercel.app",
-    tags: ["AI", "Interview Prep"],
-    label: "live demo"
-  },
-  {
     title: "textbooseter",
     description: "This web application allows users to input text and receive essential information about the sentences they type. It provides functionalities such as converting text to uppercase or lowercase, copying text to the clipboard, clearing the input, and removing extra spaces.",
-    image: "https://images.pexels.com/photos/4126724/pexels-photo-4126724.jpeg",
+    image: textBoosterImage,
     projectUrl: "https://text-booster.vercel.app",
     tags: ["JavaScript", "React"],
     label: "live demo"
@@ -57,7 +52,7 @@ const Projects = () => {
   {
     title: "Naruto Ninja Runner",
     description: "Experience the thrill of ninja adventure as Naruto dashes through obstacles in this addictive, offline-ready game, reminiscent of the classic dino runner! it is a beginner developer game.",
-    image: "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg",
+    image: NarutoImage,
     projectUrl: "https://action-game-of-naruto.vercel.app",
     tags: ["Game", "JavaScript"],
     label: "live demo"
