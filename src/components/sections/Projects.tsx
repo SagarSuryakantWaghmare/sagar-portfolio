@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../ui/SectionTitle';
 import ProjectCard from '../ui/ProjectCard';
-
+import portfolioImage from '../Assets/ProjectsImg/portfolio.png';
+import freeflowImage from '../Assets/ProjectsImg/freeflow.png';
+import leetcodeTrackerImage from '../Assets/ProjectsImg/leetcodeTracker.png';
 const Projects = () => {
   const projects = [
   {
     title: "portfolio 💼",
     description: "A modern, responsive personal portfolio website of Sagar Suryakant Waghmare — Full Stack Developer | UI/UX Enthusiast | MERN Stack Developer — built using React, Tailwind CSS, and Framer Motion.",
-    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
+    image: portfolioImage,
     projectUrl: "https://sagar-portfolio-dun.vercel.app",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     label: "live"
@@ -15,7 +17,7 @@ const Projects = () => {
   {
     title: "FreeFlow Chat",
     description: "Sounds like a great name for a peer-to-peer (P2P) communication platform that ensures seamless interaction without obstacles and no data storage. 🚀",
-    image: "https://images.pexels.com/photos/4126724/pexels-photo-4126724.jpeg",
+    image: freeflowImage,
     projectUrl: "https://freeflow-three.vercel.app/",
     tags: ["React", "P2P"],
     label: "live demo"
@@ -23,7 +25,7 @@ const Projects = () => {
   {
     title: "LeetCode Info Tracker",
     description: "A web application built with React and Vite to track LeetCode progress. It displays the number of questions solved in different difficulty levels: Easy, Medium, and Hard. Ideal for developers looking to visualize their coding journey and progress.",
-    image: "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg",
+    image: leetcodeTrackerImage,
     projectUrl: "https://leetcode-info-tracker.vercel.app",
     tags: ["React", "Vite"],
     label: "live demo"
