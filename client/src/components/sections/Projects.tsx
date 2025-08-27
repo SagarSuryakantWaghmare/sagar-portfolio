@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import SectionTitle from '../ui/SectionTitle';
 import ProjectCard from '../ui/ProjectCard';
 import portfolioImage from '../Assets/ProjectsImg/portfolio.png';
@@ -6,9 +5,19 @@ import freeflowImage from '../Assets/ProjectsImg/freeflow.png';
 import leetcodeTrackerImage from '../Assets/ProjectsImg/leetcodeTracker.png';
 import startupSphereImage from '../Assets/ProjectsImg/invowave.png';
 import textBoosterImage from '../Assets/ProjectsImg/textbooster.png';
-import NarutoImage from '../Assets/ProjectsImg/naruto.png';
+import NarutoImage from '../Assets/ProjectsImg/Naruto.png';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  projectUrl: string;
+  tags: string[];
+  label: string;
+}
+
 const Projects = () => {
-  const projects = [
+  const projects: Project[] = [
   {
     title: "portfolio 💼",
     description: "A modern, responsive personal portfolio website of Sagar Suryakant Waghmare — Full Stack Developer | UI/UX Enthusiast | MERN Stack Developer — built using React, Tailwind CSS, and Framer Motion.",
@@ -59,17 +68,6 @@ const Projects = () => {
   },
 ];
 
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
   return (
     <section id="projects" className="section-padding bg-dark-50 dark:bg-dark-800/50">
       <div className="container-custom">
@@ -78,25 +76,19 @@ const Projects = () => {
           subtitle="Check out some of my recent work"
         />
         
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <ProjectCard
-              key={index}              title={project.title}
+              key={index}
+              title={project.title}
               description={project.description}
               image={project.image}
               projectUrl={project.projectUrl}
-              // @ts-ignore
               tags={project.tags}
               label={project.label}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
