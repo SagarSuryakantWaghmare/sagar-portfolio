@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  
+  body {
+    @apply font-inter text-dark-800 bg-white dark:bg-dark-900 dark:text-dark-100 transition-colors duration-300 overflow-x-hidden;
+    max-width: 100vw;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug mb-6;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  .typed-cursor {
+    @apply text-primary-600 dark:text-primary-400;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skill-item {
+      @apply transform-none transition-none animate-none;
+    }
+    
+    .particles {
+      @apply hidden;
+    }
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 max-w-7xl;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .btn {
+    @apply inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-300 transform;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 hover:scale-105 shadow-md;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white hover:scale-105;
+  }
+
+  .card {
+    @apply bg-white dark:bg-dark-800 rounded-lg shadow-card transition-all duration-300;
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-lg w-full h-[480px] transition-all duration-500;
+  }
+
+  .project-card .glow-border {
+    @apply absolute inset-0 rounded-lg;
+    background: linear-gradient(
+      var(--rotate, 0deg),
+      theme('colors.primary.400') 0%,
+      theme('colors.primary.600') 50%,
+      transparent 100%
+    );
+    z-index: -1;
+    animation: glow-rotate 3s linear infinite;
+    padding: 2px;
+  }
+
+  .project-card::after {
+    @apply absolute inset-[1px] rounded-lg bg-white dark:bg-dark-800;
+    content: '';
+    z-index: -1;
+  }
+
+  @keyframes glow-rotate {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  .navbar-link {
+    @apply relative px-3 py-2 text-dark-800 dark:text-dark-100 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors;
+  }
+
+  .navbar-link::after {
+    @apply content-[''] absolute w-0 h-0.5 bg-primary-600 dark:bg-primary-400 left-0 -bottom-1 transition-all duration-300;
+  }
+
+  .navbar-link:hover::after {
+    @apply w-full;
+  }
+
+  .skill-item {
+    @apply py-4 px-6 rounded-lg m-2 transition-all duration-300 hover:text-white transform hover:-translate-y-1 cursor-pointer inline-flex flex-col items-center justify-center;
+    min-width: 120px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .skill-item:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .skills-track {
+    @apply flex gap-4 inline-flex;
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  .skills-track:hover {
+    animation-play-state: paused;
+  }
+
+  .skills-container {
+    @apply overflow-hidden relative whitespace-nowrap;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .particle {
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  @media (max-width: 640px) {
+    .container-custom {
+      @apply px-4;
+    }
+    
+    .section-padding {
+      @apply py-12;
+    }
+    
+    .card {
+      @apply p-4;
+    }
+  }
+}
