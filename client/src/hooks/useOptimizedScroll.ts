@@ -1,36 +1,34 @@
-import { useEffect, useState, useCallback } from 'react';
-
-// Throttle function to limit scroll event frequency
-const throttle = (func: Function, delay: number) => {
-    // ts-ignore
-    let timeoutId: NodeJS.Timeout | null = null;
-    let lastExecTime = 0;
-
-    return (...args: any[]) => {
-        const currentTime = Date.now();
-
-        if (currentTime - lastExecTime > delay) {
-            func(...args);
-            lastExecTime = currentTime;
-        } else {
-            if (timeoutId) clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                func(...args);
-                lastExecTime = Date.now();
-            }, delay - (currentTime - lastExecTime));
-        }
-    };
-};
+import { useEffect, useState } from 'react';
 
 export const useOptimizedScroll = (callback: (scrollY: number) => void, delay: number = 16) => {
-    const throttledCallback = useCallback(throttle(callback, delay), [callback, delay]);
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    let lastExecTime = 0;
 
-    useEffect(() => {
-        const handleScroll = () => throttledCallback(window.scrollY);
+    const throttledScroll = (scrollY: number) => {
+      const currentTime = Date.now();
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [throttledCallback]);
+      if (currentTime - lastExecTime > delay) {
+        callback(scrollY);
+        lastExecTime = currentTime;
+      } else {
+        if (timeoutId) clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          callback(scrollY);
+          lastExecTime = Date.now();
+        }, delay - (currentTime - lastExecTime));
+      }
+    };
+
+    const handleScroll = () => throttledScroll(window.scrollY);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [callback, delay]);
 };
 
 export const useScrollPosition = () => {
