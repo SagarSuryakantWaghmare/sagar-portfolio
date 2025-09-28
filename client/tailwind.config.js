@@ -7,29 +7,52 @@ export default {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
+        robotoSlab: ['Roboto Slab', 'serif'],
       },
       colors: {
         primary: {
-          100: 'rgb(255, 243, 224)',
-          200: 'rgb(254, 225, 177)',
-          300: 'rgb(253, 208, 134)',
-          400: 'rgb(253, 191, 96)',
-          500: 'rgb(255, 170, 66)',
-          600: 'rgb(255, 137, 17)',
-          700: 'rgb(230, 121, 9)',
-          800: 'rgb(188, 98, 6)',
-          900: 'rgb(153, 80, 4)',
+          50: '#fff7ed',   // Very light orange
+          100: '#ffedd5',  // Light orange
+          200: '#fed7aa',  // Soft orange
+          300: '#fdba74',  // Medium orange
+          400: '#fb923c',  // Bright orange
+          500: '#f97316',  // Main orange
+          600: '#ea580c',  // Deep orange
+          700: '#c2410c',  // Darker orange
+          800: '#9a3412',  // Very dark orange
+          900: '#7c2d12',  // Deepest orange
         },
         dark: {
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1', 
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
+          50: '#f8fafc',   // Almost white
+          100: '#f1f5f9',  // Very light gray
+          200: '#e2e8f0',  // Light gray
+          300: '#cbd5e1',  // Medium light gray
+          400: '#94a3b8',  // Medium gray
+          500: '#64748b',  // Gray
+          600: '#475569',  // Dark gray
+          700: '#334155',  // Darker gray
+          800: '#1e293b',  // Very dark gray
+          900: '#0f172a',  // Almost black
+        },
+        surface: {
+          50: '#fafbfc',   // Lightest surface
+          100: '#f4f6f8',  // Light surface
+          200: '#e6eaef',  // Medium light surface
+          300: '#d1d9e0',  // Medium surface
+          400: '#9ca3af',  // Medium dark surface
+          500: '#6b7280',  // Dark surface
+          600: '#4b5563',  // Darker surface
+          700: '#374151',  // Very dark surface
+          800: '#1f2937',  // Almost black surface
+          900: '#111827',  // Black surface
+        },
+        accent: {
+          blue: '#3b82f6',
+          green: '#10b981',
+          purple: '#8b5cf6',
+          pink: '#ec4899',
+          yellow: '#f59e0b',
         },
       },
       spacing: {

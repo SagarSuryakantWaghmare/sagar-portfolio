@@ -47,7 +47,7 @@ const Hero = () => {
               style={{ maxWidth: '100%', overflow: 'hidden' }}
             >
               <motion.span 
-                className="text-primary-600 dark:text-primary-400 font-semibold mb-2 block"
+                className="text-primary-500 dark:text-primary-400 font-semibold mb-2 block"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -66,18 +66,12 @@ const Hero = () => {
                   stiffness: 100
                 }}
               >
-                <motion.span 
-                  initial={{ opacity: 0, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, filter: "blur(0px)" }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                >
+                <span className="gradient-text dark:gradient-text">
                   Sagar Waghmare
-                </motion.span>
-                <motion.span 
+                </span>
+                <span 
                   className="absolute -left-2 -bottom-2 w-20 h-2 bg-primary-500/30 dark:bg-primary-500/50 z-[-1] rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: "40%" }}
-                  transition={{ duration: 0.8, delay: 0.9 }}
+                  style={{ width: "40%" }}
                 />
               </motion.h1>
 
@@ -88,13 +82,13 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 style={{ maxWidth: '100%', overflow: 'hidden' }}
               >
-                <span className="text-xl md:text-2xl font-medium text-dark-600 dark:text-dark-300">
+                <span className="text-xl md:text-2xl font-medium text-surface-600 dark:text-surface-200">
                   I'm a <span ref={typedRef}></span>
                 </span>
               </motion.div>
 
               <motion.p 
-                className="text-base sm:text-lg mb-8 max-w-2xl text-dark-600 dark:text-dark-300"
+                className="text-base sm:text-lg mb-8 max-w-2xl text-surface-600 dark:text-surface-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
@@ -199,7 +193,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 1.5 }}
         >
           <motion.span 
-            className="text-xs font-medium text-dark-500 dark:text-dark-400 mb-2"
+            className="text-xs font-medium text-surface-500 dark:text-surface-400 mb-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8 }}
@@ -207,7 +201,7 @@ const Hero = () => {
             Scroll Down
           </motion.span>
           <motion.div
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-dark-800 
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-surface-800 
               shadow-md hover:shadow-lg transition-all duration-300"
             animate={{ 
               y: [0, -6, 0],
@@ -221,7 +215,7 @@ const Hero = () => {
               }
             }}
           >
-            <a href="#about" className="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400
+            <a href="#about" className="text-surface-600 dark:text-surface-300 hover:text-primary-500 dark:hover:text-primary-400
               flex items-center justify-center w-full h-full">
               <ArrowDown size={18} />
             </a>
