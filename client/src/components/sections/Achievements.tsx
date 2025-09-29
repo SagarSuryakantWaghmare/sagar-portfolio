@@ -64,7 +64,7 @@ const Achievements = () => {
       title: 'College Topper',
       description:
         'Recognized as College Topper 8 times on the Coding Ninjas Leaderboard.',
-      countValue: 8,
+      countValue: 12,
       countSuffix: 'x',
     },
     {
@@ -80,7 +80,7 @@ const Achievements = () => {
       title: 'Project Leadership',
       description:
         'Successfully led multiple development teams on real-world projects.',
-      countValue: 5,
+      countValue: 7,
       countSuffix: '+',
     },
   ];
